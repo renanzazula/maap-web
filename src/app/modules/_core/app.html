@@ -1,0 +1,85 @@
+<div class="content-menu" ng-class="{'active':activeMenu}">
+    <div class="bg-content">
+        <div class="logo">
+            <h1>maap.</h1>
+        </div>
+        <div class="text-about" ng-if="activeMenu=='about'">
+            maap. és una empresa que uneix tres disciplines dedicades al disseny i transformació d'espais.
+            Ofereix serveis d'interiorisme, arquitectura i espais efímers (direcció d'art i escenografia).
+        </div>
+        <div class="text-contact" ng-if="activeMenu=='contact'">
+            <div class="text-left">
+                Doctor Valentí 31<br>
+                17257 Torroella<br>
+                de Montgrí, Girona
+            </div>
+            <div class="text-right">
+                T +34 972 757 209<br>
+                info@maap.com<br>
+                maap.com
+            </div>
+        </div>
+        <div class="btn-close">
+            <i ng-click="toogleMenu('')" class="fa fa-times"></i>
+        </div>
+    </div>
+    <div class="line"></div>
+</div>
+
+<div class="container-fluid">
+    <div class="menu-left">
+        <div id="menu-curtain" ng-class="{'opened':menuOpen}" ng-click="fnToogleMenu()"></div>
+        <div id="menu-container" class="menu-container">
+            <ul>
+                <li>
+                    <a ng-class="{'active':activeMenu=='about'}" ng-click="toogleMenu('about')">Nosaltres</a>
+                </li>
+                <li>
+                    <a ng-class="{'active':activeMenu=='contact'}" ng-click="toogleMenu('contact')">Contactre</a>
+                </li>
+            </ul>
+            <ul>
+                <li ng-repeat="(idx, project) in arrProjetos">
+                    <a data-ui-sref="app.projects({id:idx+1, name:slug(project.name)})" ng-class="{'active':(idx+1)==$state.params.id}" >{{ project.name }}</a>
+                </li>
+            </ul>
+            <ul class="menu-bottom visible-xs">
+                <li>
+                    <a href="#">Login</a>
+                </li>
+                <li>
+                    <a href="#">Contactre</a>
+                </li>
+                <li>
+                    <a href="#">Esp</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="content-center">
+        <div class="logo">
+            <div class="toogle-menu visible-xs" ng-click="fnToogleMenu()"><i class="fa fa-bars"></i></div>
+            <h1 data-ui-sref="app.home">maap.</h1>
+        </div>
+        <main>
+            <div data-ui-view></div>
+        </main>
+    </div>
+    <div class="menu-right">
+        <ul>
+            <li>
+                <a href="#">Login</a>
+            </li>
+            <li>
+                <a href="#">Contactre</a>
+            </li>
+            <li>
+                <a href="#">Esp</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+

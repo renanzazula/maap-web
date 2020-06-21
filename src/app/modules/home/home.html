@@ -1,0 +1,41 @@
+<div class="home">
+    <div id="carouselHome" class="carousel slide hidden-xs" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item" ng-repeat="img in vm.arrImages track by $index" ng-class="{'active':$index==0}" ng-if="$index%2==0">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img class="img-responsive" ng-src="{{trusted(vm.arrImages[$index])}}">
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="img-responsive" ng-src="{{trusted(vm.arrImages[$index+1])}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#carouselHome" data-slide="prev" ng-non-bindable>
+            <img src="/assets/images/arrow-l.png"> 
+            <span class="sr-only">Prev</span>
+        </a>
+        <a class="right carousel-control" href="#carouselHome" data-slide="next" ng-non-bindable>
+             <img src="/assets/images/arrow-r.png"> 
+            <span class="sr-only">Next</span> 
+        </a>
+    </div>
+
+    <div id="carouselHomeXS" class="carousel slide visible-xs" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item" ng-repeat="img in vm.arrImages track by $index" ng-class="{'active':$index==0}">
+                <img class="img-responsive" ng-src="{{trusted(img)}}">
+            </div>
+        </div>
+        <a class="left carousel-control" href="#carouselHomeXS" data-slide="prev" ng-non-bindable>
+            <img src="/assets/images/arrow-l.png"> 
+            <span class="sr-only">Prev</span>
+        </a>
+        <a class="right carousel-control" href="#carouselHomeXS" data-slide="next" ng-non-bindable>
+             <img src="/assets/images/arrow-r.png"> 
+            <span class="sr-only">Next</span> 
+        </a>
+    </div>
+
+</div>

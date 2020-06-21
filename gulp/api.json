@@ -1,0 +1,18 @@
+{
+    "local": {
+        "uri": "http://localhost",
+        "port": 3000
+    },
+    "testing": {
+        "uri": "https://api.testing.application.name.com.br",
+        "port": 3000
+    },
+    "staging": {
+        "uri": "https://api.staging.application.name.com.br",
+        "port": 3000
+    },
+    "production": {
+        "uri": "https://api.production.application.name.com.br",
+        "port": 3000
+    }
+}
