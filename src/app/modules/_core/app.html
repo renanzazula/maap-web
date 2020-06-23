@@ -4,8 +4,7 @@
             <h1>maap.</h1>
         </div>
         <div class="text-about" ng-if="activeMenu=='about'">
-            maap. és una empresa que uneix tres disciplines dedicades al disseny i transformació d'espais.
-            Ofereix serveis d'interiorisme, arquitectura i espais efímers (direcció d'art i escenografia).
+            {{ translate('about') }}
         </div>
         <div class="text-contact" ng-if="activeMenu=='contact'">
             <div class="text-left">
@@ -32,15 +31,19 @@
         <div id="menu-container" class="menu-container">
             <ul>
                 <li>
-                    <a ng-class="{'active':activeMenu=='about'}" ng-click="toogleMenu('about')">Nosaltres</a>
+                    <a ng-click="toogleMenu('about')">{{ translate('we') }}</a>
                 </li>
                 <li>
-                    <a ng-class="{'active':activeMenu=='contact'}" ng-click="toogleMenu('contact')">Contactre</a>
+                    <a ng-click="toogleMenu('contact')">{{ translate('contact') }}</a>
                 </li>
             </ul>
             <ul>
                 <li ng-repeat="(idx, project) in arrProjetos">
-                    <a data-ui-sref="app.projects({id:idx+1, name:slug(project.name)})" ng-class="{'active':(idx+1)==$state.params.id}" >{{ project.name }}</a>
+                    <a
+                        data-ui-sref="app.projects({id:idx+1, name:slug(project.name)})"
+                        ng-class="{'active':(idx+1)==$state.params.id}" >
+                        {{ project.name[lang] }}
+                    </a>
                 </li>
             </ul>
             <ul class="menu-bottom visible-xs">
@@ -48,10 +51,14 @@
                     <a href="#">Login</a>
                 </li>
                 <li>
-                    <a href="#">Contactre</a>
+                    <a ng-click="toogleMenu('contact')">{{ translate('contact') }}</a>
                 </li>
                 <li>
-                    <a href="#">Esp</a>
+                    <select id="sll" class="select-language">
+                        <option ng-selected="lang=='es'" value="es">{{ translate('es') }}</option>
+                        <option ng-selected="lang=='en'" value="en">{{ translate('en') }}</option>
+                        <option ng-selected="lang=='ca'" value="ca">{{ translate('ca') }}</option>
+                    </select>
                 </li>
             </ul>
 
@@ -72,10 +79,14 @@
                 <a href="#">Login</a>
             </li>
             <li>
-                <a href="#">Contactre</a>
+                <a ng-click="toogleMenu('contact')">{{ translate('contact') }}</a>
             </li>
             <li>
-                <a href="#">Esp</a>
+                <select id="sll" dir="rtl" class="select-language">
+                    <option ng-selected="lang=='es'" value="es">{{ translate('es') }}</option>
+                    <option ng-selected="lang=='en'" value="en">{{ translate('en') }}</option>
+                    <option ng-selected="lang=='ca'" value="ca">{{ translate('ca') }}</option>
+                </select>
             </li>
         </ul>
     </div>

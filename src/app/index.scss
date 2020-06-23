@@ -137,6 +137,16 @@ body {
 					line-height: 1.3;
 					a{
 						color: inherit !important;
+						cursor: pointer;
+					}
+					.select-language{
+						border: none;
+						background-color: white;
+						text-align: right;
+						-webkit-appearance: none;
+						-moz-appearance: none;
+						appearance: none;
+						outline: none;
 					}
 				}
 			}
@@ -392,6 +402,15 @@ body {
 				.menu-bottom{
 					position: absolute;
 					bottom: 20px;
+					.select-language{
+						border: none;
+						background-color: white;
+						text-align: right;
+						-webkit-appearance: none;
+						-moz-appearance: none;
+						appearance: none;
+						outline: none;
+					}
 				}
 			}
 		}

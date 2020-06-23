@@ -1,16 +1,16 @@
 <div class="project">
     <div class="labels">
-        <div class="name">{{vm.project.name}}</div>
-        <div class="year">{{vm.project.location}}</div>
+        <div class="name">{{vm.project.name[lang]}}</div>
+        <div class="year">{{vm.project.location[lang]}}</div>
     </div>
     <div class="image-project">
         <img class="img-responsive" ng-src="{{trusted(vm.project.image)}}"> 
     </div>
     <div class="description">
-        {{vm.project.description}}
+        {{vm.project.description[lang]}}
     </div>
     <div class="explain">
-        {{vm.project.explain}}
+        {{vm.project.explain[lang]}}
     </div>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
